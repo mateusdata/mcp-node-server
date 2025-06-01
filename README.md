@@ -83,4 +83,46 @@ echo '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"greet","ar
 ```
 
 
+
+## Using SSE (Server-Sent Events) with the MCP Server
+
+You can interact with the MCP server using SSE for real-time communication. Start the server:
+
+```bash
+node build/index.js sse
+```
+
+You should see:
+
+```
+MCP Server running with SSE on http://localhost:8765/sse
+```
+
+### Connecting to the SSE endpoint
+
+In a new terminal, connect using `curl`:
+
+```bash
+curl http://localhost:8765/sse
+```
+
+Example output:
+
+```
+event: endpoint
+data: /messages?sessionId=d9bfe7df-937c-475e-8d80-904a99f9ef4d
+```
+
+### Sending a message to the server
+
+Copy the `sessionId` from the previous output and use it to send a request:
+
+```bash
+curl -X POST http://localhost:8765/messages \
+  -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"greet","arguments":{"name":"Mateus"}}}'
+```
+
+The server will respond via the SSE connection with the result of your request.
+
 This project is licensed under the MIT License.

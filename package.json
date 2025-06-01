@@ -14,9 +14,11 @@
   "license": "ISC",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",
+    "express": "^5.1.0",
     "zod": "^3.25.45"
   },
   "devDependencies": {
+    "@types/express": "^5.0.2",
     "typescript": "^5.8.3"
   }
 }
