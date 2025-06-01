@@ -18,6 +18,16 @@ server.tool("add-number",
   })
 );
 
+server.tool(
+  "greet",
+  { name: z.string().describe("The name of the person to greet") },
+  async ({name}:{ name: string}) =>{
+    return {
+      content: [{type:"text", text: `Hello, ${name}!`}],
+    }
+  }
+);
+
 // Add a dynamic greeting resource
 server.resource(
   "greeting",

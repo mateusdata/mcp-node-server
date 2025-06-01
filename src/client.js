@@ -1,10 +1,15 @@
 import { spawn } from "child_process";
 import readline from "readline";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 async function run() {
   // Roda seu servidor MCP
-  const child = spawn("node", ["build/index.js"], {
+  const child = spawn("node", ["../build/index.js"], {
     stdio: ["pipe", "pipe", "inherit"],
+    cwd: __dirname,
   });
 
   // Cria readline para ler a saída linha a linha
