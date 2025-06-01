@@ -83,4 +83,4 @@ echo '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"greet","ar
 ```
 
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License.
