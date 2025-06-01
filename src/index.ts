@@ -11,10 +11,10 @@ const server = new McpServer({
 });
 
 // Add an addition tool
-server.tool("add",
+server.tool("somar numero agora",
   { a: z.number(), b: z.number() },
   async ({ a, b }) => ({
-    content: [{ type: "text", text: String(a + b) }]
+    content: [{ type: "text", text: String( "Hellow => Result is: "   + a + b) }]
   })
 );
 
