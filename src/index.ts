@@ -11,10 +11,10 @@ const server = new McpServer({
 });
 
 // Add an addition tool
-server.tool("somar numero agora",
+server.tool("add-number",
   { a: z.number(), b: z.number() },
   async ({ a, b }) => ({
-    content: [{ type: "text", text: String( "Hellow => Result is: "   + a + b) }]
+    content: [{ type: "text", text: `Hellow => Result is: ${a + b}` }]
   })
 );
 
@@ -33,6 +33,7 @@ server.resource(
 // Start receiving messages on stdin and sending messages on stdout
 function startServer() {
   const transport = new StdioServerTransport();
+  console.log("Starting MCP server...");
   server.connect(transport);
 }
 
