@@ -1,6 +1,11 @@
 # MCP MateusData Server
 
-A TypeScript server implementing a simple example of the **Model Context Protocol (MCP)** — ideal as a "Hello World" to understand how an MCP server works.
+A TypeScript server implementing a simple **Model Context Protocol (MCP)** — a true "Hello World" example to help you understand how an MCP server works. This project includes basic features such as:
+
+- Handling JSON-RPC requests
+- Example tools like `add-number` and `greet`
+- Support for Server-Sent Events (SSE) for real-time communication
+- Simple client and server code for easy testing and learning
 
 ## Prerequisites
 
